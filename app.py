@@ -10,13 +10,13 @@ from kafka import KafkaProducer
 
 EVENT_TEMPLATES = [
 
-    {  "eventValue": "AIRLINES", "eventSource": "WEBSITE"},
-    { "eventValue": "MERCHANDISE", "eventSource": "POS"},
-    {  "eventValue": "HOTEL", "eventSource": "POS"},
-    { "eventValue": "ONLINE_PURCHASE", "eventSource": "WEBSITE"},
-    { "eventValue": "UTILITIES", "eventSource": "WEBSITE"},
-    { "eventValue": "RESTAURANTS", "eventSource": "WEBSITE"},
-    { "eventValue": "OTHERS", "eventSource": "WEBSITE"}
+    {  "eventValue": "AIRLINES", "eventSource": "WEBSITE", "custId" : "CUST898920"},
+    { "eventValue": "MERCHANDISE", "eventSource": "POS" , "custId" : "CUST898700"},
+    {  "eventValue": "HOTEL", "eventSource": "POS","custId" : "CUST898990"},
+    { "eventValue": "ONLINE_PURCHASE", "eventSource": "WEBSITE","custId" : "CUST892220"},
+    { "eventValue": "UTILITIES", "eventSource": "WEBSITE","custId" : "CUST898700"},
+    { "eventValue": "RESTAURANTS", "eventSource": "WEBSITE","custId" : "CUST898656"},
+    { "eventValue": "OTHERS", "eventSource": "WEBSITE","custId" : "CUST894320"}
 
 ]
 
@@ -82,7 +82,7 @@ if __name__ == '__main__':
     parser.add_argument(
         '--topic',
         help='Topic to publish to, env variable KAFKA_TOPIC',
-        default='event-input-stream')
+        default='event-inp-stream')
     parser.add_argument(
         '--rate',
         type=int,
