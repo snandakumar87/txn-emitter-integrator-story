@@ -4,9 +4,8 @@ A Python source-to-image application for emitting to an Apache Kafka topic
 ## Launching on OpenShift
 
 ```
-oc new-app centos/python-36-centos7~https://github.com/elmiko/event-stream-decisions \
-  --context-dir event-emitter \
-  -e KAFKA_BROKERS=kafka:9092 \
+oc new-app centos/python-36-centos7~txn-emitter-integrator-story \
+  -e KAFKA_BROKERS=mycluster:9092 \
   -e KAFKA_TOPIC=events \
   -e RATE=1 \
   --name=emitter
